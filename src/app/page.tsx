@@ -2,7 +2,6 @@ import {
   ArrowRight,
   Ban,
   BookMarked,
-  BookOpen,
   ChevronDown,
   CircleDollarSign,
   ClipboardCheck,
@@ -15,13 +14,12 @@ import {
   Megaphone,
   Network,
   Scale,
-  ScrollText,
   Shield,
   Sparkles,
   UserCheck,
   Users,
 } from "lucide-react";
-import { faqs, navLinks, selectionStages, values } from "@/lib/content";
+import { faqs, selectionStages, values } from "@/lib/content";
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -40,7 +38,6 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
-      <SiteHeader />
       <main id="main">
         <Hero />
         <About />
@@ -53,53 +50,7 @@ export default function Home() {
         <Faq />
         <FinalCta />
       </main>
-      <SiteFooter />
     </>
-  );
-}
-
-/* ---------------------------------- Header --------------------------------- */
-
-function SiteHeader() {
-  return (
-    <header className="sticky top-0 z-50 border-b border-gold/25 bg-parchment/90 backdrop-blur-md">
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-gold-pale"
-      >
-        Skip to main content
-      </a>
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
-        <a href="#main" className="flex shrink-0 items-center" aria-label="Dharma Shiksha Parishad — home">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo.svg"
-            alt="Dharma Shiksha Parishad logo — golden Sengol encircled by dharma chakras"
-            width={210}
-            height={74}
-            className="h-11 w-auto sm:h-13"
-          />
-        </a>
-        <nav aria-label="Primary" className="hidden items-center gap-7 lg:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-[15px] font-medium tracking-wide text-bark transition-colors duration-200 hover:text-gold-deep"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-        <a
-          href="#volunteer"
-          className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-bold tracking-wide text-gold-pale shadow-md transition-colors duration-200 hover:bg-ink-mist"
-        >
-          Volunteer
-          <ArrowRight className="h-4 w-4" aria-hidden="true" />
-        </a>
-      </div>
-    </header>
   );
 }
 
@@ -584,7 +535,7 @@ function VolunteerJourney() {
                 Ready to serve the cause?
               </p>
               <a
-                href="mailto:contact@dharmashikshaparishad.org?subject=Volunteer%20Application"
+                href="/apply"
                 className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-gradient-to-r from-amber to-gold px-7 py-3.5 font-bold text-ink transition-opacity duration-200 hover:opacity-90"
               >
                 Apply to Volunteer
@@ -810,7 +761,7 @@ function FinalCta() {
           change.
         </p>
         <a
-          href="#volunteer"
+          href="/apply"
           className="mt-10 inline-flex cursor-pointer items-center gap-2 rounded-full bg-gradient-to-r from-amber to-gold px-9 py-4 text-lg font-bold text-ink shadow-lg shadow-amber/20 transition-opacity duration-200 hover:opacity-90"
         >
           Begin Your Journey
@@ -818,81 +769,6 @@ function FinalCta() {
         </a>
       </div>
     </section>
-  );
-}
-
-/* ---------------------------------- Footer ---------------------------------- */
-
-function SiteFooter() {
-  return (
-    <footer className="border-t border-gold/30 bg-ink-soft text-parchment">
-      <div className="mx-auto max-w-7xl px-4 py-14 sm:px-6">
-        <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr]">
-          <div>
-            <p className="font-display text-2xl font-semibold tracking-wide text-gold-pale">
-              DHARMA SHIKSHA PARISHAD
-            </p>
-            <p className="mt-1 text-xs uppercase tracking-[0.28em] text-parchment/50">
-              Preserving · Educating · Upholding Sanatana Dharma
-            </p>
-            <blockquote className="mt-6 max-w-md border-l-2 border-gold/40 pl-4 italic leading-relaxed text-parchment/70">
-              &ldquo;The future of Sanatana Dharma depends not merely upon
-              numbers, but upon dedicated individuals who are willing to learn,
-              serve, and stand for what is right.&rdquo;
-            </blockquote>
-          </div>
-          <nav aria-label="Footer">
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
-              Explore
-            </p>
-            <ul className="mt-5 space-y-3">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-parchment/75 transition-colors duration-200 hover:text-gold-pale"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.2em] text-gold">
-              Principles
-            </p>
-            <ul className="mt-5 space-y-3 text-parchment/75">
-              <li className="flex items-center gap-2.5">
-                <Shield className="h-4 w-4 text-gold" aria-hidden="true" />
-                Strictly non-political
-              </li>
-              <li className="flex items-center gap-2.5">
-                <CircleDollarSign className="h-4 w-4 text-gold" aria-hidden="true" />
-                Zero fees &amp; zero fundraising
-              </li>
-              <li className="flex items-center gap-2.5">
-                <Scale className="h-4 w-4 text-gold" aria-hidden="true" />
-                Equal opportunity by merit
-              </li>
-              <li className="flex items-center gap-2.5">
-                <BookOpen className="h-4 w-4 text-gold" aria-hidden="true" />
-                Education before everything
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-gold/15 pt-8 text-sm text-parchment/50 sm:flex-row">
-          <p>
-            &copy; {new Date().getFullYear()} Dharma Shiksha Parishad. All
-            rights reserved.
-          </p>
-          <p className="font-deva" lang="sa">
-            धर्मो रक्षति रक्षितः
-          </p>
-        </div>
-      </div>
-    </footer>
   );
 }
 

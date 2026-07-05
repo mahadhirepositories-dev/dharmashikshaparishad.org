@@ -5,6 +5,8 @@ import {
   Noto_Serif_Devanagari,
 } from "next/font/google";
 import "./globals.css";
+import { SiteHeader } from "@/components/site-header";
+import { SiteFooter } from "@/components/site-footer";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -141,7 +143,9 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        <SiteHeader />
         {children}
+        <SiteFooter />
       </body>
     </html>
   );

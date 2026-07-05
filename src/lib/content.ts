@@ -1,10 +1,11 @@
+// Root-relative anchors so links work from any page, not just the home page.
 export const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#mission", label: "Vision & Mission" },
-  { href: "#activities", label: "What We Do" },
-  { href: "#volunteer", label: "Become a Volunteer" },
-  { href: "#structure", label: "Structure" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#about", label: "About" },
+  { href: "/#mission", label: "Vision & Mission" },
+  { href: "/#activities", label: "What We Do" },
+  { href: "/#volunteer", label: "Become a Volunteer" },
+  { href: "/#structure", label: "Structure" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 // Rendered in the FAQ section and mirrored verbatim in FAQPage JSON-LD,
