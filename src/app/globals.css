@@ -1,17 +1,104 @@
 @import "tailwindcss";
 
-@theme inline {
-  --color-brand-primary: #7C3AED;
-  --color-brand-secondary: #A78BFA;
-  --color-brand-cta: #CA8A04;
-  --color-brand-bg: #FAF5FF;
-  --color-brand-text: #4C1D95;
+@theme {
+  /* Palette drawn from the Sengol logo artwork */
+  --color-ink: #171106;
+  --color-ink-soft: #221909;
+  --color-ink-mist: #35280f;
+  --color-gold: #c9a03c;
+  --color-gold-deep: #9a5f00;
+  --color-gold-dark: #6d4a06;
+  --color-amber: #ffb341;
+  --color-gold-pale: #ffd587;
+  --color-parchment: #faf5ea;
+  --color-parchment-deep: #f2e9d4;
+  --color-bark: #2b2210;
+  --color-bark-soft: #57451f;
 
-  --font-heading: var(--font-eb-garamond);
-  --font-text: var(--font-crimson-text);
+  --font-display: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-alegreya), system-ui, sans-serif;
+  --font-deva: var(--font-devanagari), serif;
+
+  --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slow-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--color-brand-bg);
-  color: var(--color-brand-text);
+  background: var(--color-parchment);
+  color: var(--color-bark);
+  font-family: var(--font-body);
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-amber);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Ornamental ring that rotates very slowly behind the hero */
+.chakra-ring {
+  animation: slow-spin 240s linear infinite;
+}
+
+/* Staggered entrance for hero children */
+.rise {
+  animation: var(--animate-rise);
+}
+.rise-1 { animation-delay: 0.05s; }
+.rise-2 { animation-delay: 0.18s; }
+.rise-3 { animation-delay: 0.32s; }
+.rise-4 { animation-delay: 0.46s; }
+.rise-5 { animation-delay: 0.6s; }
+
+/* FAQ disclosure */
+details.faq summary::-webkit-details-marker {
+  display: none;
+}
+details.faq summary .faq-icon {
+  transition: transform 0.25s ease;
+}
+details.faq[open] summary .faq-icon {
+  transform: rotate(180deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise,
+  .chakra-ring {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
 }
