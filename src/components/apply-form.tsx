@@ -56,7 +56,7 @@ export function ApplyForm() {
         className="flex flex-col items-center gap-4 rounded-3xl border border-gold/30 bg-parchment p-10 text-center shadow-sm"
       >
         <BadgeCheck className="h-12 w-12 text-gold-deep" aria-hidden="true" />
-        <h3 className="font-display text-3xl font-semibold text-ink">
+        <h3 className="font-display text-3xl font-semibold text-heading">
           Application received
         </h3>
         <p className="max-w-md leading-relaxed text-bark">
@@ -75,7 +75,7 @@ export function ApplyForm() {
     >
       <div className="grid gap-6 sm:grid-cols-2">
         <div className="sm:col-span-2">
-          <label htmlFor="fullName" className="mb-2 block font-bold text-ink">
+          <label htmlFor="fullName" className="mb-2 block font-bold text-heading">
             Full name <span aria-hidden="true" className="text-gold-deep">*</span>
           </label>
           <input
@@ -90,7 +90,7 @@ export function ApplyForm() {
           />
         </div>
         <div>
-          <label htmlFor="email" className="mb-2 block font-bold text-ink">
+          <label htmlFor="email" className="mb-2 block font-bold text-heading">
             Email <span aria-hidden="true" className="text-gold-deep">*</span>
           </label>
           <input
@@ -105,7 +105,7 @@ export function ApplyForm() {
           />
         </div>
         <div>
-          <label htmlFor="phone" className="mb-2 block font-bold text-ink">
+          <label htmlFor="phone" className="mb-2 block font-bold text-heading">
             Phone <span className="font-normal text-bark-soft">(optional)</span>
           </label>
           <input
@@ -119,7 +119,7 @@ export function ApplyForm() {
           />
         </div>
         <div>
-          <label htmlFor="city" className="mb-2 block font-bold text-ink">
+          <label htmlFor="city" className="mb-2 block font-bold text-heading">
             City / District <span aria-hidden="true" className="text-gold-deep">*</span>
           </label>
           <input
@@ -134,7 +134,7 @@ export function ApplyForm() {
           />
         </div>
         <div>
-          <label htmlFor="state" className="mb-2 block font-bold text-ink">
+          <label htmlFor="state" className="mb-2 block font-bold text-heading">
             State <span aria-hidden="true" className="text-gold-deep">*</span>
           </label>
           <input
@@ -149,7 +149,7 @@ export function ApplyForm() {
           />
         </div>
         <div className="sm:col-span-2">
-          <label htmlFor="motivation" className="mb-2 block font-bold text-ink">
+          <label htmlFor="motivation" className="mb-2 block font-bold text-heading">
             Why do you wish to volunteer?{" "}
             <span aria-hidden="true" className="text-gold-deep">*</span>
           </label>
@@ -171,7 +171,7 @@ export function ApplyForm() {
         </div>
 
         <fieldset className="sm:col-span-2">
-          <legend className="mb-3 font-bold text-ink">
+          <legend className="mb-3 font-bold text-heading">
             Declarations <span aria-hidden="true" className="text-gold-deep">*</span>
           </legend>
           <div className="space-y-3">
@@ -207,7 +207,7 @@ export function ApplyForm() {
       {status === "error" && (
         <p
           role="alert"
-          className="mt-6 flex items-center gap-2 rounded-xl border border-red-800/30 bg-red-800/5 px-4 py-3 font-medium text-red-900"
+          className="mt-6 flex items-center gap-2 rounded-xl border border-red-800/30 bg-red-800/5 px-4 py-3 font-medium text-red-900 dark:border-red-400/30 dark:bg-red-400/10 dark:text-red-300"
         >
           <CircleAlert className="h-5 w-5 shrink-0" aria-hidden="true" />
           {errorMessage}

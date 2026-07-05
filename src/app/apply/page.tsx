@@ -44,7 +44,7 @@ export default function ApplyPage() {
     <main id="main">
       <section
         aria-labelledby="apply-heading"
-        className="relative overflow-hidden bg-ink text-center text-parchment"
+        className="relative overflow-hidden bg-ink text-center text-cream"
       >
         <div
           aria-hidden="true"
@@ -67,7 +67,7 @@ export default function ApplyPage() {
               Application
             </span>
           </h1>
-          <p className="mt-6 text-lg leading-relaxed text-parchment/80">
+          <p className="mt-6 text-lg leading-relaxed text-cream/80">
             Becoming a volunteer costs nothing — and asks everything of your
             sincerity. Fill in the form below to begin the six-stage induction
             journey.
@@ -83,7 +83,7 @@ export default function ApplyPage() {
                 <Icon className="h-5 w-5 text-gold-pale" aria-hidden="true" />
               </span>
               <div>
-                <h2 className="font-display text-xl font-semibold text-ink">
+                <h2 className="font-display text-xl font-semibold text-heading">
                   {title}
                 </h2>
                 <p className="mt-1 text-sm leading-relaxed text-bark">{text}</p>

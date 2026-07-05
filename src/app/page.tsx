@@ -60,7 +60,7 @@ function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className="relative overflow-hidden bg-ink text-parchment"
+      className="relative overflow-hidden bg-ink text-cream"
     >
       {/* Atmosphere: radial glow + slowly rotating chakra ring */}
       <div
@@ -71,19 +71,24 @@ function Hero() {
             "radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,160,60,0.28), transparent 65%)",
         }}
       />
-      <ChakraRing className="chakra-ring pointer-events-none absolute left-1/2 top-1/2 h-[1100px] w-[1100px] -translate-x-1/2 -translate-y-1/2 opacity-[0.07]" />
+      <div
+        aria-hidden="true"
+        className="ring-fade pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <ChakraRing className="chakra-ring absolute left-1/2 top-1/2 h-[1100px] w-[1100px] -translate-x-1/2 -translate-y-1/2 opacity-[0.07]" />
+      </div>
 
       <div className="relative mx-auto flex max-w-5xl flex-col items-center px-4 py-24 text-center sm:px-6 md:py-32">
         <p className="rise rise-1 font-deva text-2xl text-gold-pale md:text-3xl" lang="sa">
           धर्मो रक्षति रक्षितः
         </p>
-        <p className="rise rise-1 mt-2 text-sm italic tracking-wide text-parchment/60">
+        <p className="rise rise-1 mt-2 text-sm italic tracking-wide text-cream/60">
           Dharma protects those who protect it — Manusmṛti 8.15
         </p>
 
         <h1
           id="hero-heading"
-          className="rise rise-2 mt-8 font-display text-5xl font-semibold leading-[1.05] text-parchment sm:text-6xl md:text-7xl"
+          className="rise rise-2 mt-8 font-display text-5xl font-semibold leading-[1.05] text-cream sm:text-6xl md:text-7xl"
         >
           Preserving, Educating &amp;
           <span className="block bg-gradient-to-r from-gold-pale via-amber to-gold bg-clip-text text-transparent">
@@ -91,7 +96,7 @@ function Hero() {
           </span>
         </h1>
 
-        <p className="rise rise-3 mt-8 max-w-2xl text-lg leading-relaxed text-parchment/80 md:text-xl">
+        <p className="rise rise-3 mt-8 max-w-2xl text-lg leading-relaxed text-cream/80 md:text-xl">
           Dharma Shiksha Parishad is a professional non-profit organization
           building a disciplined Pan-India network of committed volunteers —
           educators, torchbearers, and custodians of authentic dharmic
@@ -114,7 +119,7 @@ function Hero() {
           </a>
         </div>
 
-        <ul className="rise rise-5 mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium tracking-wide text-parchment/70">
+        <ul className="rise rise-5 mt-14 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm font-medium tracking-wide text-cream/70">
           {[
             "Zero fees, zero fundraising",
             "Strictly non-political",
@@ -214,7 +219,7 @@ function SectionHeading({
     <h2
       id={id}
       className={`font-display text-4xl font-semibold leading-tight md:text-5xl ${
-        light ? "text-parchment" : "text-ink"
+        light ? "text-cream" : "text-heading"
       }`}
     >
       {children}
@@ -392,7 +397,7 @@ function Activities() {
                   <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-ink">
                     <Icon className="h-6 w-6 text-gold-pale" aria-hidden="true" />
                   </span>
-                  <h3 className="font-display text-2xl font-semibold text-ink">
+                  <h3 className="font-display text-2xl font-semibold text-heading">
                     {title}
                   </h3>
                 </div>
@@ -422,7 +427,7 @@ function ValuesBand() {
   return (
     <section
       aria-labelledby="values-heading"
-      className="relative overflow-hidden bg-ink text-parchment"
+      className="relative overflow-hidden bg-ink text-cream"
     >
       <div
         aria-hidden="true"
@@ -437,7 +442,7 @@ function ValuesBand() {
         <SectionHeading id="values-heading" light>
           What we prioritize
         </SectionHeading>
-        <p className="mx-auto mt-5 max-w-2xl text-lg text-parchment/75">
+        <p className="mx-auto mt-5 max-w-2xl text-lg text-cream/75">
           Volunteers are contributors to a larger cause — never participants
           seeking personal gain. Knowledge can be taught; character cannot.
         </p>
@@ -447,7 +452,7 @@ function ValuesBand() {
               <dt className="font-display text-3xl font-semibold text-gold-pale md:text-4xl">
                 {first}
               </dt>
-              <dd className="mt-1 text-sm uppercase tracking-[0.2em] text-parchment/60">
+              <dd className="mt-1 text-sm uppercase tracking-[0.2em] text-cream/60">
                 over {second}
               </dd>
             </div>
@@ -492,7 +497,7 @@ function VolunteerJourney() {
               >
                 {i + 1}
               </span>
-              <h3 className="mt-3 font-display text-2xl font-semibold text-ink">
+              <h3 className="mt-3 font-display text-2xl font-semibold text-heading">
                 {stage.title}
               </h3>
               <p className="mt-2 leading-relaxed text-bark">{stage.detail}</p>
@@ -500,7 +505,7 @@ function VolunteerJourney() {
           ))}
         </ol>
 
-        <div className="mx-auto mt-16 max-w-6xl rounded-3xl border border-gold/30 bg-ink p-8 text-parchment md:p-12">
+        <div className="mx-auto mt-16 max-w-6xl rounded-3xl border border-gold/30 bg-ink p-8 text-cream md:p-12">
           <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr]">
             <div>
               <h3 className="font-display text-3xl font-semibold text-gold-pale">
@@ -517,13 +522,13 @@ function VolunteerJourney() {
                       className="mt-1 h-5 w-5 shrink-0 text-amber"
                       aria-hidden="true"
                     />
-                    <span className="text-lg leading-relaxed text-parchment/85">
+                    <span className="text-lg leading-relaxed text-cream/85">
                       {item}
                     </span>
                   </li>
                 ))}
               </ul>
-              <p className="mt-6 text-parchment/60">
+              <p className="mt-6 text-cream/60">
                 Humility matters more than qualifications. Commitment matters
                 more than expertise. Applications are subject to review and
                 approval.
@@ -531,7 +536,7 @@ function VolunteerJourney() {
             </div>
             <div className="flex flex-col items-center gap-5 rounded-2xl border border-gold/25 bg-ink-soft p-8 text-center">
               <ClipboardCheck className="h-10 w-10 text-gold" aria-hidden="true" />
-              <p className="font-display text-2xl font-semibold text-parchment">
+              <p className="font-display text-2xl font-semibold text-cream">
                 Ready to serve the cause?
               </p>
               <a
@@ -541,7 +546,7 @@ function VolunteerJourney() {
                 Apply to Volunteer
                 <ArrowRight className="h-5 w-5" aria-hidden="true" />
               </a>
-              <p className="text-sm text-parchment/50">
+              <p className="text-sm text-cream/50">
                 Flexible model — no fixed hours. Assignments arrive as official
                 work orders with a seven-day window.
               </p>
@@ -599,7 +604,7 @@ function ZeroFeePolicy() {
               <span className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold/15">
                 <Icon className="h-7 w-7 text-gold-deep" aria-hidden="true" />
               </span>
-              <h3 className="mt-5 font-display text-2xl font-semibold text-ink">
+              <h3 className="mt-5 font-display text-2xl font-semibold text-heading">
                 {title}
               </h3>
               <p className="mt-3 leading-relaxed text-bark">{text}</p>
@@ -683,7 +688,7 @@ function Structure() {
               <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold/15">
                 <Icon className="h-6 w-6 text-gold-deep" aria-hidden="true" />
               </span>
-              <h3 className="mt-5 font-display text-2xl font-semibold text-ink">
+              <h3 className="mt-5 font-display text-2xl font-semibold text-heading">
                 {title}
               </h3>
               <p className="mt-3 leading-relaxed text-bark">{text}</p>
@@ -718,7 +723,7 @@ function Faq() {
               className="faq group rounded-2xl border border-gold/30 bg-parchment shadow-sm"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5">
-                <h3 className="font-display text-xl font-semibold text-ink md:text-2xl">
+                <h3 className="font-display text-xl font-semibold text-heading md:text-2xl">
                   {faq.question}
                 </h3>
                 <ChevronDown
@@ -739,8 +744,13 @@ function Faq() {
 
 function FinalCta() {
   return (
-    <section aria-labelledby="cta-heading" className="relative overflow-hidden bg-ink text-center text-parchment">
-      <ChakraRing className="chakra-ring pointer-events-none absolute left-1/2 top-full h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 opacity-[0.08]" />
+    <section aria-labelledby="cta-heading" className="relative overflow-hidden bg-ink text-center text-cream">
+      <div
+        aria-hidden="true"
+        className="ring-fade pointer-events-none absolute inset-0 overflow-hidden"
+      >
+        <ChakraRing className="chakra-ring absolute left-1/2 top-full h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 opacity-[0.08]" />
+      </div>
       <div className="relative mx-auto max-w-3xl px-4 py-24 sm:px-6 md:py-32">
         <p className="font-deva text-2xl text-gold-pale" lang="sa">
           सत्यमेव जयते
@@ -754,7 +764,7 @@ function FinalCta() {
             willing to stand for it
           </span>
         </h2>
-        <p className="mt-6 text-lg leading-relaxed text-parchment/75">
+        <p className="mt-6 text-lg leading-relaxed text-cream/75">
           We seek individuals who value responsibility over recognition,
           contribution over convenience, and commitment over popularity. Even a
           small number of dedicated, disciplined people can create lasting

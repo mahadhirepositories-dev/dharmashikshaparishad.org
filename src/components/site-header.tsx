@@ -1,13 +1,14 @@
 import { ArrowRight } from "lucide-react";
 import { navLinks } from "@/lib/content";
 import { MobileNav } from "./mobile-nav";
+import { ThemeToggle } from "./theme-toggle";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-50 border-b border-gold/25 bg-parchment/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-gold/25 bg-ink/95 backdrop-blur-md">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-ink focus:px-4 focus:py-2 focus:text-gold-pale"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-gold focus:px-4 focus:py-2 focus:text-ink"
       >
         Skip to main content
       </a>
@@ -17,7 +18,7 @@ export function SiteHeader() {
           <img
             src="/logo.svg"
             alt="Dharma Shiksha Parishad logo — golden Sengol encircled by dharma chakras"
-            width={210}
+            width={219}
             height={74}
             className="h-11 w-auto sm:h-13"
           />
@@ -27,16 +28,17 @@ export function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className="text-[15px] font-medium tracking-wide text-bark transition-colors duration-200 hover:text-gold-deep"
+              className="text-[15px] font-medium tracking-wide text-cream/85 transition-colors duration-200 hover:text-gold-pale"
             >
               {link.label}
             </a>
           ))}
         </nav>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2.5">
+          <ThemeToggle />
           <a
             href="/apply"
-            className="hidden cursor-pointer items-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-bold tracking-wide text-gold-pale shadow-md transition-colors duration-200 hover:bg-ink-mist sm:inline-flex"
+            className="hidden cursor-pointer items-center gap-2 rounded-full bg-gradient-to-r from-amber to-gold px-5 py-2.5 text-sm font-bold tracking-wide text-ink shadow-md transition-opacity duration-200 hover:opacity-90 sm:inline-flex"
           >
             Volunteer
             <ArrowRight className="h-4 w-4" aria-hidden="true" />

@@ -15,7 +15,7 @@ export function MobileNav() {
         aria-controls="mobile-menu"
         aria-label={open ? "Close menu" : "Open menu"}
         onClick={() => setOpen((v) => !v)}
-        className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full text-bark transition-colors duration-200 hover:bg-gold/15"
+        className="flex h-11 w-11 cursor-pointer items-center justify-center rounded-full text-cream transition-colors duration-200 hover:bg-gold/15"
       >
         {open ? (
           <X className="h-6 w-6" aria-hidden="true" />
@@ -28,7 +28,7 @@ export function MobileNav() {
         <nav
           id="mobile-menu"
           aria-label="Mobile"
-          className="absolute inset-x-0 top-full border-b border-gold/25 bg-parchment shadow-lg"
+          className="absolute inset-x-0 top-full border-b border-gold/25 bg-ink shadow-lg"
         >
           <ul className="px-4 py-3 sm:px-6">
             {navLinks.map((link) => (
@@ -36,7 +36,7 @@ export function MobileNav() {
                 <a
                   href={link.href}
                   onClick={() => setOpen(false)}
-                  className="block rounded-lg px-3 py-3 text-lg font-medium text-bark transition-colors duration-200 hover:bg-gold/10 hover:text-gold-deep"
+                  className="block rounded-lg px-3 py-3 text-lg font-medium text-cream/85 transition-colors duration-200 hover:bg-gold/10 hover:text-gold-pale"
                 >
                   {link.label}
                 </a>
@@ -46,7 +46,7 @@ export function MobileNav() {
               <a
                 href="/apply"
                 onClick={() => setOpen(false)}
-                className="block rounded-lg bg-ink px-3 py-3 text-center text-lg font-bold text-gold-pale"
+                className="block rounded-lg bg-gradient-to-r from-amber to-gold px-3 py-3 text-center text-lg font-bold text-ink"
               >
                 Apply to Volunteer
               </a>
